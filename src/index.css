@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Manrope", system-ui, sans-serif;
+  background: #f8f9fd;
+  color: #0f1534;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  @apply transition-colors duration-200;
+}
+
+::selection {
+  background: rgba(18, 55, 230, 0.16);
+  color: #0f1534;
+}
