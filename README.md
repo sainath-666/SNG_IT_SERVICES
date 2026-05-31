@@ -1,6 +1,6 @@
-# Gamic Solutions React Replica
+# SNG it services - React Replica
 
-A high-fidelity React clone of https://gamicsolutions.com/ built with Vite, TypeScript, Tailwind CSS, Framer Motion, React Router DOM, and Lucide React.
+A high-fidelity React clone of https://gamicsolutions.com/ built for SNG it services, implemented with Vite, TypeScript, Tailwind CSS, Framer Motion, React Router DOM, and Lucide React.
 
 ## Tech Stack
 

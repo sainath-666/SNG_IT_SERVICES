@@ -25,11 +25,11 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-xl font-extrabold">
-                G
+                S
               </div>
               <div>
                 <div className="font-heading text-lg font-bold tracking-tight">
-                  Gamic Solutions
+                  SNG it services
                 </div>
                 <p className="text-sm text-white/65">
                   Digital transformation · IT services · Cloud support
@@ -102,7 +102,7 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-3 py-5 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2025 Gamic Solutions. All rights reserved.</span>
+          <span>© 2025 SNG it services. All rights reserved.</span>
           <span>
             Built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion.
           </span>
