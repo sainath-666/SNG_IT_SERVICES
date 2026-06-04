@@ -19,7 +19,7 @@ export default function Hero() {
             className="max-w-2xl"
           >
             <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-border bg-white px-4 py-2 shadow-soft">
-              <div className="flex items-center gap-1 text-[#e21d2c]">
+              <div className="flex items-center gap-1 text-accentTeal">
                 {Array.from({ length: 5 }).map((_, index) => (
                   <Star key={index} className="h-4 w-4 fill-current" />
                 ))}
@@ -30,7 +30,11 @@ export default function Hero() {
             </div>
 
             <h1 className="font-heading text-5xl font-extrabold leading-[0.95] tracking-tight text-ink sm:text-6xl lg:text-[4.95rem]">
-              We manage your IT,
+              We manage your{" "}
+              <span className="bg-gradient-to-r from-brand via-accentCyan to-accentEmerald bg-clip-text text-transparent">
+                IT
+              </span>
+              ,
               <br />
               so you can manage
               <br />
@@ -91,7 +95,7 @@ export default function Hero() {
             </div>
             {stats.map((stat) => (
               <div key={stat.id} className="border-l border-[#d9dde7] pl-6">
-                <div className="font-heading text-4xl font-extrabold tracking-tight text-ink">
+                <div className="font-heading text-4xl font-extrabold tracking-tight bg-gradient-to-r from-brand to-accentTeal bg-clip-text text-transparent w-fit">
                   {stat.value}
                 </div>
                 <div className="mt-1 max-w-[10rem] text-sm font-medium leading-6 text-slateInk/80">

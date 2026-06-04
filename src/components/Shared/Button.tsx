@@ -17,10 +17,10 @@ const baseClasses =
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand text-white shadow-lift hover:-translate-y-0.5 hover:bg-[#0f2fd0]",
-  secondary: "bg-brandSoft text-ink hover:-translate-y-0.5 hover:bg-[#cdd7ff]",
+    "bg-gradient-primary text-white shadow-lift hover:-translate-y-0.5 hover:shadow-[0_20px_55px_rgba(13,148,136,0.25)] hover:brightness-105",
+  secondary: "bg-accentTealSoft text-accentTeal hover:-translate-y-0.5 hover:bg-[#bbf7f0] hover:text-[#0f766e]",
   ghost:
-    "border border-border bg-white text-ink hover:-translate-y-0.5 hover:border-brand hover:text-brand",
+    "border border-border bg-white text-ink hover:-translate-y-0.5 hover:border-accentTeal hover:text-accentTeal",
 };
 
 export default function Button({

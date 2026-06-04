@@ -78,7 +78,7 @@ export default function Navbar() {
             className="flex items-center gap-3"
             aria-label="SNG it services home"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-[#42a5ff] text-white shadow-soft">
+            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-accentTeal text-white shadow-soft">
               <span className="font-heading text-xl font-extrabold">S</span>
             </div>
             <div className="leading-none">

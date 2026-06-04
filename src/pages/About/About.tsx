@@ -106,14 +106,21 @@ export default function AboutPage() {
           <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {values.map((value, index) => {
               const Icon = value.icon;
+              const themes = [
+                { bg: "bg-sky-50 text-accentSky", hoverBorder: "hover:border-sky-200" },
+                { bg: "bg-indigo-50 text-accentIndigo", hoverBorder: "hover:border-indigo-200" },
+                { bg: "bg-emerald-50 text-accentEmerald", hoverBorder: "hover:border-emerald-200" },
+                { bg: "bg-teal-50 text-accentTeal", hoverBorder: "hover:border-teal-200" },
+              ];
+              const theme = themes[index % themes.length];
 
               return (
                 <SectionReveal key={value.title} delay={index * 0.05}>
                   <motion.article
                     whileHover={{ y: -6 }}
-                    className="h-full rounded-[1.7rem] border border-border bg-white p-6 shadow-soft"
+                    className={`h-full rounded-[1.7rem] border border-border bg-white p-6 shadow-soft transition-all duration-300 ${theme.hoverBorder}`}
                   >
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-brandSoft text-brand">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${theme.bg}`}>
                       <Icon className="h-6 w-6" />
                     </div>
                     <h3 className="mt-5 font-heading text-xl font-bold text-ink">

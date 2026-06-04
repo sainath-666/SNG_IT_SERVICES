@@ -23,7 +23,7 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.6 }}
-            className="rounded-[2rem] bg-ink p-8 text-white shadow-soft sm:p-10"
+            className="rounded-[2rem] bg-cta-gradient p-8 text-white shadow-soft sm:p-10"
           >
             <SectionHeading
               eyebrow="Partner with us"
@@ -92,13 +92,13 @@ export default function CTA() {
                   key={field}
                   type="text"
                   placeholder={field}
-                  className="rounded-2xl border border-border bg-[#f8faff] px-4 py-3 text-sm outline-none transition focus:border-brand"
+                  className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25"
                 />
               ))}
               <textarea
                 placeholder="How Can We Help You?"
                 rows={4}
-                className="rounded-2xl border border-border bg-[#f8faff] px-4 py-3 text-sm outline-none transition focus:border-brand"
+                className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25"
               />
               <Button type="submit" className="w-full py-3.5">
                 Submit
