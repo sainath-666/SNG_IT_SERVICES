@@ -23,9 +23,9 @@ export default function Testimonials() {
               <motion.article
                 whileHover={{ y: -6 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
-                className="h-full rounded-[1.75rem] border border-border bg-[#fbfcff] p-7 shadow-soft"
+                className="h-full rounded-[1.75rem] border border-border bg-[#fbfcff] p-7 shadow-soft transition-all duration-300 hover:border-accentCyan/30 hover:shadow-[0_20px_50px_rgba(6,182,212,0.06)]"
               >
-                <Quote className="h-8 w-8 text-brand/40" />
+                <Quote className="h-8 w-8 text-accentTeal/30" />
                 <p className="mt-5 text-sm leading-7 text-slateInk">
                   “{testimonial.quote}”
                 </p>

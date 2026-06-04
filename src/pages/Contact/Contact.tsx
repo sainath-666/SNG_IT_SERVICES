@@ -1,10 +1,52 @@
-import { Mail, MapPin, Phone, Send } from "lucide-react";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { CheckCircle2, Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Container from "@/components/Shared/Container";
 import SectionHeading from "@/components/Shared/SectionHeading";
 import Button from "@/components/Shared/Button";
 
 export default function ContactPage() {
+  const [formState, setFormState] = useState<"idle" | "submitting" | "success">("idle");
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formData.firstName || !formData.email || !formData.message) {
+      alert("Please fill in all required fields (First name, Email, and Message).");
+      return;
+    }
+    setFormState("submitting");
+    setTimeout(() => {
+      setFormState("success");
+    }, 1200);
+  };
+
+  const handleReset = () => {
+    setFormData({
+      firstName: "",
+      lastName: "",
+      company: "",
+      email: "",
+      phone: "",
+      message: "",
+    });
+    setFormState("idle");
+  };
+
   return (
     <main className="bg-white">
       <section className="bg-hero-radial py-20 sm:py-24">
@@ -36,14 +78,14 @@ export default function ContactPage() {
                   <Phone className="mt-0.5 h-5 w-5 text-brand" />
                   <div>
                     <div className="font-semibold text-ink">Phone</div>
-                    <a href="tel:+18068099684">+1 806-809-9684</a>
+                    <a href="tel:+18068099684" className="hover:text-brand transition-colors">+1 806-809-9684</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
                   <Mail className="mt-0.5 h-5 w-5 text-brand" />
                   <div>
                     <div className="font-semibold text-ink">Email</div>
-                    <a href="mailto:info@gamicsolutions.com">
+                    <a href="mailto:info@gamicsolutions.com" className="hover:text-brand transition-colors">
                       info@gamicsolutions.com
                     </a>
                   </div>
@@ -66,48 +108,127 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ delay: 0.08 }}
-              className="rounded-[2rem] border border-border bg-white p-8 shadow-soft"
+              className="rounded-[2rem] border border-border bg-white p-8 shadow-soft relative overflow-hidden"
             >
-              <div className="flex items-center justify-between gap-4">
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-[0.24em] text-brand">
-                    Schedule a free consultation
-                  </div>
-                  <h3 className="mt-3 font-heading text-3xl font-bold text-ink">
-                    What happens next?
-                  </h3>
-                </div>
-                <div className="hidden rounded-full bg-brandSoft px-4 py-2 text-sm font-semibold text-brand sm:block">
-                  Fast response
-                </div>
-              </div>
+              <AnimatePresence mode="wait">
+                {formState === "success" ? (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.95 }}
+                    className="flex flex-col items-center text-center py-10 px-4"
+                  >
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accentEmeraldSoft text-accentEmerald">
+                      <CheckCircle2 className="h-10 w-10 animate-pulse" />
+                    </div>
+                    <h3 className="mt-6 font-heading text-2xl font-bold text-ink">
+                      Inquiry Submitted!
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-muted max-w-sm">
+                      Thank you, <span className="font-semibold text-ink">{formData.firstName || "there"}</span>! Your inquiry has been received. Our IT solutions team will contact you at <span className="font-semibold text-ink">{formData.email}</span> within 2 hours.
+                    </p>
+                    <Button
+                      onClick={handleReset}
+                      className="mt-8 px-6 py-3"
+                    >
+                      Submit Another Inquiry
+                    </Button>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                  >
+                    <div className="flex items-center justify-between gap-4">
+                      <div>
+                        <div className="text-xs font-bold uppercase tracking-[0.24em] text-brand">
+                          Schedule a free consultation
+                        </div>
+                        <h3 className="mt-3 font-heading text-3xl font-bold text-ink">
+                          What happens next?
+                        </h3>
+                      </div>
+                      <div className="hidden rounded-full bg-brandSoft px-4 py-2 text-sm font-semibold text-brand sm:block">
+                        Fast response
+                      </div>
+                    </div>
 
-              <form className="mt-8 grid gap-4 sm:grid-cols-2">
-                {[
-                  "First name",
-                  "Last name",
-                  "Company / Organization",
-                  "Company email",
-                  "Phone",
-                  "How Can We Help You?",
-                ].map((field, index) => (
-                  <input
-                    key={field}
-                    type="text"
-                    placeholder={field}
-                    className={`rounded-2xl border border-border bg-[#f8faff] px-4 py-3 text-sm outline-none transition focus:border-brand ${index === 5 ? "sm:col-span-2" : ""}`}
-                  />
-                ))}
-                <textarea
-                  placeholder="Message"
-                  rows={5}
-                  className="rounded-2xl border border-border bg-[#f8faff] px-4 py-3 text-sm outline-none transition focus:border-brand sm:col-span-2"
-                />
-                <Button type="submit" className="sm:col-span-2 px-6 py-3">
-                  Submit
-                  <Send className="h-4 w-4" />
-                </Button>
-              </form>
+                    <form onSubmit={handleSubmit} className="mt-8 grid gap-4 sm:grid-cols-2">
+                      <input
+                        type="text"
+                        name="firstName"
+                        placeholder="First name *"
+                        required
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25"
+                      />
+                      <input
+                        type="text"
+                        name="lastName"
+                        placeholder="Last name"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25"
+                      />
+                      <input
+                        type="text"
+                        name="company"
+                        placeholder="Company / Organization"
+                        value={formData.company}
+                        onChange={handleChange}
+                        className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25 sm:col-span-2"
+                      />
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Company email *"
+                        required
+                        value={formData.email}
+                        onChange={handleChange}
+                        className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25"
+                      />
+                      <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone"
+                        value={formData.phone}
+                        onChange={handleChange}
+                        className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25"
+                      />
+                      <textarea
+                        name="message"
+                        placeholder="How Can We Help You? *"
+                        required
+                        rows={5}
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="rounded-2xl border border-border bg-slate-50 px-4 py-3 text-sm outline-none transition focus:border-accentTeal focus:ring-2 focus:ring-accentTeal/25 sm:col-span-2"
+                      />
+                      <Button
+                        type="submit"
+                        disabled={formState === "submitting"}
+                        className="sm:col-span-2 px-6 py-3.5 relative overflow-hidden"
+                      >
+                        {formState === "submitting" ? (
+                          <div className="flex items-center gap-2">
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                            Sending inquiry...
+                          </div>
+                        ) : (
+                          <>
+                            Submit Request
+                            <Send className="h-4 w-4" />
+                          </>
+                        )}
+                      </Button>
+                    </form>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           </div>
         </Container>
