@@ -155,7 +155,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "daniel",
     quote:
-      "Gamic Solutions is an example of the way Managed Services should be done. They step in immediately and keep us moving forward.",
+      "SNG IT Services is an example of the way Managed Services should be done. They step in immediately and keep us moving forward.",
     name: "Daniel Legrante",
     role: "CIO",
     company: "Restaurant Product Supplier",

@@ -54,6 +54,7 @@ export default function ContactPage() {
           <div className="max-w-3xl">
             <SectionHeading
               eyebrow="Contact"
+              as="h1"
               title="Talk to us about the systems your team needs most."
               description="This contact page follows the same conversion-focused pattern as the reference site: a sharp hero, clear details, and a form-like panel that reads as ready for action."
             />
@@ -75,29 +76,32 @@ export default function ContactPage() {
               </h3>
               <div className="mt-6 space-y-5 text-sm text-muted">
                 <div className="flex items-start gap-3">
-                  <Phone className="mt-0.5 h-5 w-5 text-brand" />
+                  <Phone className="mt-0.5 h-5 w-5 text-brand flex-shrink-0" />
                   <div>
                     <div className="font-semibold text-ink">Phone</div>
-                    <a href="tel:+18068099684" className="hover:text-brand transition-colors">+1 806-809-9684</a>
+                    <a href="tel:+917842959855" className="hover:text-brand transition-colors">+91 78429 59855</a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <Mail className="mt-0.5 h-5 w-5 text-brand" />
+                  <Mail className="mt-0.5 h-5 w-5 text-brand flex-shrink-0" />
                   <div>
                     <div className="font-semibold text-ink">Email</div>
-                    <a href="mailto:info@gamicsolutions.com" className="hover:text-brand transition-colors">
-                      info@gamicsolutions.com
+                    <a href="mailto:admin@sngsofts.com" className="hover:text-brand transition-colors">
+                      admin@sngsofts.com
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-3">
-                  <MapPin className="mt-0.5 h-5 w-5 text-brand" />
+                  <MapPin className="mt-0.5 h-5 w-5 text-brand flex-shrink-0" />
                   <div>
                     <div className="font-semibold text-ink">
-                      Office locations
+                      Registered Address
                     </div>
-                    <p>30 N Gould St, Sheridan, WY 82801</p>
-                    <p>19 College Ave, Glassboro, NJ 08028</p>
+                    <p className="leading-relaxed">H. No.:9-4-131/1/N/16, Neeraja Colony, Toli Chowki, Hyderabad, Golconda, Telangana, India, 500008</p>
+                    <div className="mt-3 space-y-1 text-xs text-muted">
+                      <div><span className="font-semibold text-ink">CIN:</span> U62020TS2025PTC194370</div>
+                      <div><span className="font-semibold text-ink">GSTIN:</span> 36ABPCS3249C1Z7</div>
+                    </div>
                   </div>
                 </div>
               </div>

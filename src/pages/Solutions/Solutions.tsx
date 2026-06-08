@@ -14,6 +14,7 @@ export default function SolutionsPage() {
           <div className="max-w-3xl">
             <SectionHeading
               eyebrow="Solutions"
+              as="h1"
               title="A catalog of capabilities built to mirror the original site’s service-led structure."
               description="The cards below are intentionally layered, visually distinct, and highly scannable so the page feels close to the reference while remaining a maintainable React build."
             />

@@ -76,7 +76,7 @@ export default function Navbar() {
           <Link
             to="/"
             className="flex items-center gap-3"
-            aria-label="SNG it services home"
+            aria-label="SNG IT Services home"
           >
             <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-accentTeal text-white shadow-soft">
               <span className="font-heading text-xl font-extrabold">S</span>
@@ -139,11 +139,11 @@ export default function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <a
-              href="tel:+18068099684"
+              href="tel:+917842959855"
               className="inline-flex items-center gap-2 rounded-full bg-surface px-4 py-2 text-sm font-semibold text-slateInk hover:text-brand"
             >
               <Phone className="h-4 w-4" />
-              +1 806-809-9684
+              +91 78429 59855
             </a>
             <Button to="/contact" className="px-6 py-3">
               Contact Us
@@ -215,10 +215,10 @@ export default function Navbar() {
                 )}
                 <div className="flex items-center justify-between gap-3 rounded-2xl bg-surface px-4 py-3">
                   <a
-                    href="tel:+18068099684"
+                    href="tel:+917842959855"
                     className="text-sm font-semibold text-slateInk"
                   >
-                    +1 806-809-9684
+                    +91 78429 59855
                   </a>
                   <Button
                     to="/contact"

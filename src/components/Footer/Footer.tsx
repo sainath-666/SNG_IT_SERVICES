@@ -1,7 +1,4 @@
 import {
-  Facebook,
-  Instagram,
-  Linkedin,
   Mail,
   MapPin,
   Phone,
@@ -29,7 +26,7 @@ export default function Footer() {
               </div>
               <div>
                 <div className="font-heading text-lg font-bold tracking-tight">
-                  SNG it services
+                  SNG IT Services
                 </div>
                 <p className="text-sm text-white/65">
                   Digital transformation · IT services · Cloud support
@@ -41,17 +38,6 @@ export default function Footer() {
               keeps the same premium, conversion-focused structure as the
               reference site.
             </p>
-            <div className="mt-6 flex items-center gap-3 text-white/70">
-              {[Linkedin, Facebook, Instagram].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="/"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/5 transition hover:bg-brand"
-                >
-                  <Icon className="h-5 w-5" />
-                </a>
-              ))}
-            </div>
           </div>
 
           <div>
@@ -78,21 +64,17 @@ export default function Footer() {
             </h3>
             <div className="mt-5 space-y-4 text-sm text-white/75">
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-brandSoft" />
-                <span>30 N Gould St, Sheridan, WY 82801</span>
+                <MapPin className="mt-0.5 h-4 w-4 text-brandSoft flex-shrink-0" />
+                <span>H. No.:9-4-131/1/N/16, Neeraja Colony, Toli Chowki, Hyderabad, Golconda, Telangana, India, 500008</span>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-brandSoft" />
-                <span>19 College Ave, Glassboro, NJ 08028</span>
+                <Phone className="mt-0.5 h-4 w-4 text-brandSoft flex-shrink-0" />
+                <a href="tel:+917842959855" className="hover:text-white transition-colors">+91 78429 59855</a>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="mt-0.5 h-4 w-4 text-brandSoft" />
-                <a href="tel:+18068099684">+1 806-809-9684</a>
-              </div>
-              <div className="flex items-start gap-3">
-                <Mail className="mt-0.5 h-4 w-4 text-brandSoft" />
-                <a href="mailto:info@gamicsolutions.com">
-                  info@gamicsolutions.com
+                <Mail className="mt-0.5 h-4 w-4 text-brandSoft flex-shrink-0" />
+                <a href="mailto:admin@sngsofts.com" className="hover:text-white transition-colors">
+                  admin@sngsofts.com
                 </a>
               </div>
             </div>
@@ -102,7 +84,16 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <Container className="flex flex-col gap-3 py-5 text-sm text-white/55 sm:flex-row sm:items-center sm:justify-between">
-          <span>© 2025 SNG it services. All rights reserved.</span>
+          <div className="flex flex-col gap-2">
+            <span>© 2025 SNG IT Services. All rights reserved.</span>
+            <span className="text-xs text-white/40">
+              SNG IT Services is a brand of SNG SOFTWARE SERVICES PRIVATE LIMITED.
+              <br className="hidden sm:inline" />
+              <span className="sm:ml-2">CIN: U62020TS2025PTC194370</span>
+              <span className="mx-2 hidden sm:inline">|</span>
+              <span className="block sm:inline">GSTIN: 36ABPCS3249C1Z7</span>
+            </span>
+          </div>
           <span>
             Built with React, Vite, TypeScript, Tailwind CSS, and Framer Motion.
           </span>

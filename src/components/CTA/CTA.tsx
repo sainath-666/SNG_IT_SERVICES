@@ -73,11 +73,11 @@ export default function CTA() {
               light
             >
               <a
-                href="tel:+18068099684"
+                href="tel:+917842959855"
                 className="mt-2 inline-flex items-center gap-2 text-lg font-semibold text-white"
               >
                 <Phone className="h-5 w-5" />
-                Call us at +1 806-809-9684
+                Call us at +91 78429 59855
               </a>
             </SectionHeading>
 

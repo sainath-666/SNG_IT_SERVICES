@@ -40,6 +40,7 @@ export default function AboutPage() {
           <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
             <SectionHeading
               eyebrow="About"
+              as="h1"
               title="A technology partner focused on outcomes, not noise."
               description="This learning clone mirrors the original site’s emphasis on trust, consistency, and measurable value across managed IT, consulting, and digital delivery."
             />

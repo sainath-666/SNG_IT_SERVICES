@@ -22,6 +22,7 @@ export default function ServicesPage() {
           <div className="max-w-3xl">
             <SectionHeading
               eyebrow="Services"
+              as="h1"
               title="A focused service catalog shaped around business continuity."
               description="The original site presents its services as a broad, trustworthy capability stack. This page mirrors that feel with clean cards, strong hierarchy, and soft motion."
             />

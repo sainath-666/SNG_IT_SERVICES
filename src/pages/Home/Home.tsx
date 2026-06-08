@@ -63,7 +63,7 @@ export default function HomePage() {
               variant="secondary"
               className="self-start px-6 py-3 text-sm"
             >
-              About Gamic Solutions
+              About SNG IT Services
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>
