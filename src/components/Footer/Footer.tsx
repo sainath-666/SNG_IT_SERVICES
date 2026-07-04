@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <img 
-                src="/logofiles/SNG_US_IT_SERVICES.svg" 
+                src="/logofiles/ChatGPT Image Jun 29, 2026, 12_55_12 AM.png" 
                 alt="SNG IT Services Logo" 
                 className="h-11 w-11 object-contain"
               />
