@@ -21,9 +21,11 @@ export default function Footer() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_0.8fr_0.9fr]">
           <div>
             <div className="flex items-center gap-3">
-              <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/10 text-xl font-extrabold">
-                S
-              </div>
+              <img 
+                src="/logofiles/SNG_US_IT_SERVICES.svg" 
+                alt="SNG IT Services Logo" 
+                className="h-11 w-11 object-contain"
+              />
               <div>
                 <div className="font-heading text-lg font-bold tracking-tight">
                   SNG IT Services

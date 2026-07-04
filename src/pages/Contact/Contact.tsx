@@ -23,16 +23,40 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.firstName || !formData.email || !formData.message) {
       alert("Please fill in all required fields (First name, Email, and Message).");
       return;
     }
     setFormState("submitting");
-    setTimeout(() => {
-      setFormState("success");
-    }, 1200);
+    try {
+      const response = await fetch("https://formspree.io/f/xqevwrkb", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          name: `${formData.firstName} ${formData.lastName}`.trim(),
+          company: formData.company,
+          email: formData.email,
+          phone: formData.phone,
+          message: formData.message,
+        })
+      });
+      if (response.ok) {
+        setFormState("success");
+      } else {
+        alert("Something went wrong. Please try again or reach out directly.");
+        setFormState("idle");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again or check your internet connection.");
+      setFormState("idle");
+    }
   };
 
   const handleReset = () => {

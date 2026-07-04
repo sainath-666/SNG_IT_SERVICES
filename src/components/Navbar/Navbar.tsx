@@ -78,9 +78,11 @@ export default function Navbar() {
             className="flex items-center gap-3"
             aria-label="SNG IT Services home"
           >
-            <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-brand to-accentTeal text-white shadow-soft">
-              <span className="font-heading text-xl font-extrabold">S</span>
-            </div>
+            <img 
+              src="/logofiles/SNG_US_IT_SERVICES.svg" 
+              alt="SNG IT Services Logo" 
+              className="h-11 w-11 object-contain"
+            />
             <div className="leading-none">
               <div className="font-heading text-[1.1rem] font-extrabold tracking-tight text-ink">
                 SNG
