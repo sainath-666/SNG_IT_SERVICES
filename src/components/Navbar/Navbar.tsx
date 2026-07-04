@@ -81,7 +81,7 @@ export default function Navbar() {
             <img 
               src="/logofiles/ChatGPT Image Jun 29, 2026, 12_55_12 AM.png" 
               alt="SNG IT Services Logo" 
-              className="h-11 w-11 object-contain"
+              className="h-16 w-16 object-contain"
             />
             <div className="leading-none">
               <div className="font-heading text-[1.1rem] font-extrabold tracking-tight text-ink">

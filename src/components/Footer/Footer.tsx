@@ -24,7 +24,7 @@ export default function Footer() {
               <img 
                 src="/logofiles/ChatGPT Image Jun 29, 2026, 12_55_12 AM.png" 
                 alt="SNG IT Services Logo" 
-                className="h-11 w-11 object-contain"
+                className="h-16 w-16 object-contain"
               />
               <div>
                 <div className="font-heading text-lg font-bold tracking-tight">
